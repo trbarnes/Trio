@@ -11,7 +11,7 @@ int main()
   cin>>red>>green>>blue;
   //...END OF "DO NOT CHANGE" AREA
 
-  sortDescending(int red, int green, int blue);
+  sortDescending(red, green, blue);
 
   //DO NOT CHANGE WITHIN THIS AREA...
   cout<<"Rearranged....\n";
@@ -24,17 +24,17 @@ int sortDescending(int first, int second, int third)
 {
   int temp;
 
-  if( first < second )
+  if( red < green )
   {
     temp = first;
     first = second;
     second = temp;
   }
-  if( second < third )
+  if( green < blue )
   {
     temp = second;
     second = third;
-    thired = temp;
+    third = temp;
   }
   if( first < second )
   {
@@ -42,5 +42,4 @@ int sortDescending(int first, int second, int third)
     first = second;
     second = temp;
   }
-}
 }
