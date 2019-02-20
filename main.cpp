@@ -1,45 +1,43 @@
 #include <iostream>
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
 
-int sortDescending(int, int, int);
+void sortDescending(int,int,int);
+void swap(int&,int&);
 
 int main()
 {
-  //DO NOT CHANGE WITHIN THIS AREA...
-  int red, blue, green;
-  cout<<"Enter Red, Green, and Blue values: ";
-  cin>>red>>green>>blue;
-  //...END OF "DO NOT CHANGE" AREA
+  int numA, numB, numC;
+  cout<<"Enter any three numbers: ";
+  cin>>numA>>numB>>numC;
 
-  sortDescending(red, green, blue);
-
-  //DO NOT CHANGE WITHIN THIS AREA...
-  cout<<"Rearranged....\n";
-  cout<<"RGB: "<<red<<","<<green<<","<<blue<<endl;
+  sortDescending(numA, numB, numC);
+  
+  cout<<"From greatest to least, they are: ";
+  cout<<numA<<","<<numB<<","<<numC<<endl;
   return 0;
-  //...END OF "DO NOT CHANGE" AREA
 }
 
-int sortDescending(int first, int second, int third)
+void sortDescending(int first, int second, int third)
 {
-  int temp;
-
-  if( red < green )
+  if( first < third )
   {
-    temp = first;
-    first = second;
-    second = temp;
-  }
-  if( green < blue )
-  {
-    temp = second;
-    second = third;
-    third = temp;
+    swap(first,third);
   }
   if( first < second )
   {
-    temp = first;
-    first = second;
-    second = temp;
+    swap(first,second);
   }
+  if( second < third )
+  {
+    swap(second,third);
+  }
+}
+
+void swap(int &first, int &second)
+{
+  int temp = first;
+  first = second;
+  second = temp;
 }
